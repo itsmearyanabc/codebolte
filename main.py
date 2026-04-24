@@ -93,16 +93,10 @@ async def main():
 
         try:
             # Run until shutdown signal or keyboard interrupt
-            idle_task = asyncio.create_task(monitor_client.idle())
-            shutdown_task = asyncio.create_task(shutdown_event.wait())
-            done, pending = await asyncio.wait(
-                [idle_task, shutdown_task],
-                return_when=asyncio.FIRST_COMPLETED,
-            )
-            for t in pending:
-                t.cancel()
+            logger.info("📡 Bot is now active and waiting for messages...")
+            await shutdown_event.wait()
         except Exception as e:
-            logger.error(f"Monitor error: {e}")
+            logger.error(f"Bot execution error: {e}")
         finally:
             dispatcher.stop()
             try:

@@ -24,10 +24,16 @@ let pendingAuth={};
 function closeModal(){otpModal.style.display='none'}
 
 // ── AUTH ──
+let _otpLock = false;
+
 async function requestOTP(phone,clean){
+  if(_otpLock) return;
   const apiId=document.getElementById('g_api_id')?.value||'';
   const apiHash=document.getElementById('g_api_hash')?.value||'';
   if(!apiId||!apiHash){toast('Save API credentials in Settings first','warn');switchTab('settings');return}
+  
+  _otpLock = true;
+  toast('Requesting OTP, please wait...', 'ok');
   const fd=new FormData();fd.append('api_id',apiId);fd.append('api_hash',apiHash);fd.append('phone',phone);
   try{
     const r=await fetch('/api/auth/send_code',{method:'POST',body:fd});
@@ -41,6 +47,7 @@ async function requestOTP(phone,clean){
       toast('OTP sent successfully');
     }else toast(d.message,'err');
   }catch(e){toast('Network error','err')}
+  _otpLock = false;
 }
 
 document.getElementById('verifyBtn')?.addEventListener('click',async()=>{
