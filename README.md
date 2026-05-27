@@ -1,4 +1,5 @@
-# Telegram Multi-Account Bulk Messenger (Elyndor Interactive Edition)
+# Telegram Multi-Account Bulk Messenger (Elyndor Interactive Edition)...
+
 
 Professional automation tool for monitoring channels and bulk forwarding messages with multiple account rotation and anti-spam protection.
 
