@@ -12,7 +12,7 @@ Professional automation tool for monitoring channels and bulk forwarding message
 
 ## 🛠️ Setup Instructions
 
-### 1. Install Dependencies
+### 1. Install Dependencies....
 ```bash
 pip install -r requirements.txt
 ```
