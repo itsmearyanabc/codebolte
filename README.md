@@ -11,7 +11,7 @@ Professional automation tool for monitoring channels and bulk forwarding message
 -   **Session Manager:** Easily clear and reset logins from the UI.
 
 ## 🛠️ Setup Instructions
-
+..........
 ### 1. Install Dependencies....
 ```bash
 pip install -r requirements.txt
