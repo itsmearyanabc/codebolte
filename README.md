@@ -24,7 +24,7 @@ python app.py
 ```
 
 ### 3. Open the Dashboard
-Go to: 👉 **http://localhost:5000**
+Go to: 👉 **http://localhost:5000**.....
 
 ### 4. Configuration
 1.  Enter your **Global API ID** and **API Hash**.
